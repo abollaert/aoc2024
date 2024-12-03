@@ -39,7 +39,7 @@ def calculate_similarity(input: tuple[list[int], list[int]]) -> int:
     return similarity
 
 if __name__ == '__main__':
-    input_data: tuple[list[int], list[int]] = parse_input("d1_part1.txt")
+    input_data: tuple[list[int], list[int]] = parse_input("d1_input.txt")
 
     print(calculate_total_distance(input_data))
     print(calculate_similarity(input_data))
