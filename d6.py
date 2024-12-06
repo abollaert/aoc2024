@@ -1,4 +1,5 @@
 from enum import IntEnum
+from multiprocessing import Pool
 
 from d4 import Direction
 
@@ -153,14 +154,8 @@ if __name__ == "__main__":
 
     count: int = 0
 
+    with Pool(12) as pool:
+        results = pool.map(run_map, new_maps)
 
-    for i in range(len(new_maps)):
-        print("Testing map %d" % (i + 1))
-
-        visited, finishes = run_map(new_maps[i])
-
-        if not finishes:
-            count += 1
-
-    print(count)
+    print(len([results[1] for result in results if result[1] == False]))
 
