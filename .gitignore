@@ -1,4 +1,5 @@
 .idea
+__pycache__/
 d2_input.txt
 d2_sample.txt
 d1_input.txt
